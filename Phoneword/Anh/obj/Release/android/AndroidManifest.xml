@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="Anh.Anh">
+  <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="18" />
+  <application android:label="Anh" android:name="mono.android.app.Application">
+    <activity android:icon="@drawable/icon" android:label="Anh" android:name="anh.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:label="CallHistoryActivity" android:name="anh.CallHistoryActivity" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="Anh.Anh.mono.MonoRuntimeProvider.__mono_init__" />
+  </application>
+  <uses-permission android:name="android.permission.CALL_PHONE" />
+</manifest>

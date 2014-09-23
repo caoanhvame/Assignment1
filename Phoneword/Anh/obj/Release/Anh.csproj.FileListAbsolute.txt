@@ -1,0 +1,12 @@
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\bin\Release\Anh.dll
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\bin\Release\Anh.pdb
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\bin\Release\Anh.Anh.apk
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\bin\Release\Anh.Anh-Signed.apk
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\Anh.dll
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\Anh.pdb
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\android\bin\Anh.Anh.apk
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\res\layout\main.xml
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\res\values\strings.xml
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\res\drawable\icon.png
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\R.cs.flag
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Anh\obj\Release\uploadflags.txt

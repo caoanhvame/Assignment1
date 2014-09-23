@@ -1,0 +1,2 @@
+Anh.MainActivity;anh.MainActivity
+Anh.CallHistoryActivity;anh.CallHistoryActivity

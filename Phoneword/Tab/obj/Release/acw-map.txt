@@ -1,0 +1,3 @@
+Tab.MainActivity;tab.MainActivity
+Tab.MainActivity.SampleTabFragment;tab.MainActivity_SampleTabFragment
+Tab.MainActivity.SampleTabFragment2;tab.MainActivity_SampleTabFragment2

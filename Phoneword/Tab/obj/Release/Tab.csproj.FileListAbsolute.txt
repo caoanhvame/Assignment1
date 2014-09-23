@@ -1,0 +1,13 @@
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\bin\Release\Tab.dll
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\bin\Release\Tab.pdb
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\bin\Release\Tab.Tab.apk
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\bin\Release\Tab.Tab-Signed.apk
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\Tab.dll
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\Tab.pdb
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\android\bin\Tab.Tab.apk
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\res\layout\main.xml
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\res\values\strings.xml
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\res\drawable\icon.png
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\res\layout\tab.xml
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\R.cs.flag
+C:\Users\Cao Anh\Documents\Projects\Phoneword\Tab\obj\Release\uploadflags.txt
