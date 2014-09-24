@@ -21,6 +21,6 @@ Global
 		{D1EEB0E1-D955-453C-B84B-0331C3A3ED66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Anh\Anh.csproj
+		StartupItem = Tab\Tab.csproj
 	EndGlobalSection
 EndGlobal
