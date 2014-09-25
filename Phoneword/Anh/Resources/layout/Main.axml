@@ -29,4 +29,9 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/history" />
+    <Button
+        android:id="@+id/thread_Button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/thread" />
 </LinearLayout>

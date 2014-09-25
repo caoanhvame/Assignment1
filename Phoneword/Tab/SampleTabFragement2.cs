@@ -27,10 +27,6 @@ namespace Tab
 			//var tab_layout = view.FindViewById<LinearLayout> (Resource.Id.tab_layout);
 			gridview.Adapter = new ImageAdapter (Activity.ApplicationContext,allPictures);
 			Button btn = view.FindViewById<Button> (Resource.Id.translate_Button);
-			//				Button btn = new Button (Activity.ApplicationContext);
-			//				btn.Text = "add picture";
-			//				btn.Id = Resource.Id.add_btn;
-			//tab_layout.AddView (btn);
 			int piccount=0;
 			btn.Click += delegate {
 				switch (piccount){

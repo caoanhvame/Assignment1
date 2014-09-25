@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<personen>
+ <persoon>
+    <id>1</id>
+    <naam>Robin van Brakel</naam>
+    <email>robin-brakel@hotmail.com</email>
+    <apersonen>5</apersonen>
+  </persoon>
+  <persoon>
+    <id>2</id>
+    <naam>Wout van Brakel</naam>
+    <email>wvanbrakel@online.nl</email>
+    <apersonen>3</apersonen>
+  </persoon>
+</personen>

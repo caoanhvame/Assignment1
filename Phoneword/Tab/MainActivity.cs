@@ -7,12 +7,14 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Net;
+using Java.IO;
+using Java.Util;
 namespace Tab
 {	[Activity (Label = "Tab", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{   
 		List<string> callHistory = new List<string>();
-	
+		Button addGroupButton;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -20,12 +22,27 @@ namespace Tab
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 			this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
-
 			AddTab ("Tab 1", Resource.Drawable.Icon, new SampleTabFragment ());
 			AddTab ("Tab 2", Resource.Drawable.Icon, new SampleTabFragment2 ());
 			if (bundle != null)
 				this.ActionBar.SelectTab(this.ActionBar.GetTabAt(bundle.GetInt("tab")));
+			addGroupButton = FindViewById<Button> (Resource.Id.add_tab_Button);
+			addGroupButton.LongClick += delegate {
+				AddTab ("Tab 3", Resource.Drawable.Icon, new SampleTabFragment ());
+				Java.IO.File sdCard = Android.OS.Environment.ExternalStorageDirectory;
+				Java.IO.File directory = new Java.IO.File (sdCard.AbsolutePath + "/downloads");
 
+				if (!directory.Exists ()) {
+					directory.Mkdirs ();
+				} 
+
+				Java.IO.File file = new Java.IO.File (directory, "text.txt");
+					FileWriter writer = new FileWriter (file,true); 
+					// Writes the content to the file
+					writer.Append ("Press\n Add\n Button\n in\n Main\n"); 
+					writer.Flush ();
+					writer.Close (); 
+			};
 		}
 
 		protected override void OnSaveInstanceState(Bundle outState)
@@ -58,9 +75,6 @@ namespace Tab
 
 			this.ActionBar.AddTab (tab);
 		}
-
-
-	
 	}
 }
 

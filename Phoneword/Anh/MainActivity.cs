@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.Threading;
 
 namespace Anh
 {
@@ -24,8 +25,9 @@ namespace Anh
 			Button translate = FindViewById<Button> (Resource.Id.translate_Button);
 			Button call = FindViewById<Button> (Resource.Id.call_Button);
 			Button history = FindViewById<Button> (Resource.Id.history_Button);
+			Button thread = FindViewById<Button> (Resource.Id.thread_Button);
 			call.Enabled = false;
-			history.Enabled = false;
+			history.Enabled = true;
 			translate.Click += delegate {
 				translateNumber=Anh.PhonewordTranslator.ToNumber(phoneNumber.Text);
 				call.Text ="Call to:"+  translateNumber;
@@ -47,10 +49,19 @@ namespace Anh
 			};
 
 			history.Click += delegate {
-				var historyIntent=new Intent(this, typeof(CallHistoryActivity));
-				historyIntent.PutStringArrayListExtra("phone_numbers",callHistory);
-				StartActivity(historyIntent);
+//				var historyIntent=new Intent(this, typeof(CallHistoryActivity));
+//				historyIntent.PutStringArrayListExtra("phone_numbers",callHistory);
+//				StartActivity(historyIntent);
+
+				var listViewIntent=new Intent(this, typeof(ListViewActivity));
+				StartActivity(listViewIntent);
 			};
+
+			thread.Click += delegate {
+				Thread oThread = new Thread(new ThreadStart(oAlpha.Beta));
+
+			};
+
 
 		}
 	}
