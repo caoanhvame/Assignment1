@@ -18,7 +18,6 @@ namespace Tab
 	{		List<int> allPictures = new List<int> ();
 		public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 		{	
-//			allPictures.Add (Resource.Drawable.sample_0);
 			base.OnCreateView(inflater, container, savedInstanceState);
 			var view = inflater.Inflate(Resource.Layout.Tab2, container, false);
 			var sampleTextView = view.FindViewById<TextView>(Resource.Id.sampleTextView);
@@ -52,12 +51,13 @@ namespace Tab
 					piccount=0;
 				}
 				gridview.Adapter = new ImageAdapter (Activity.ApplicationContext,allPictures);
-
 			};
 			gridview.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args) {
 				Toast.MakeText (Activity.ApplicationContext, args.Position.ToString (), ToastLength.Short).Show ();
 			};
+
 			return view;
+
 		}
 	}
 }

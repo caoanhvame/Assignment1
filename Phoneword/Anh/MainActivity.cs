@@ -25,7 +25,6 @@ namespace Anh
 			Button translate = FindViewById<Button> (Resource.Id.translate_Button);
 			Button call = FindViewById<Button> (Resource.Id.call_Button);
 			Button history = FindViewById<Button> (Resource.Id.history_Button);
-			Button thread = FindViewById<Button> (Resource.Id.thread_Button);
 			call.Enabled = false;
 			history.Enabled = true;
 			translate.Click += delegate {
@@ -56,11 +55,7 @@ namespace Anh
 				var listViewIntent=new Intent(this, typeof(ListViewActivity));
 				StartActivity(listViewIntent);
 			};
-
-			thread.Click += delegate {
-				Thread oThread = new Thread(new ThreadStart(oAlpha.Beta));
-
-			};
+				
 
 
 		}

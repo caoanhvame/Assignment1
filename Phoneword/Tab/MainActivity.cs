@@ -12,37 +12,31 @@ using Java.Util;
 namespace Tab
 {	[Activity (Label = "Tab", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
-	{   
-		List<string> callHistory = new List<string>();
-		Button addGroupButton;
+	{   	
+		Java.IO.File sdCard ;
+		Java.IO.File directory;
+		Java.IO.File file;
 		protected override void OnCreate (Bundle bundle)
-		{
+		{	
+			sdCard= Android.OS.Environment.ExternalStorageDirectory;
+			directory= new Java.IO.File (sdCard.AbsolutePath + "/downloads");
+			if (!directory.Exists ()) {
+				directory.Mkdirs ();
+			} 
+			file = new Java.IO.File (directory, "text.txt");
+		
 			base.OnCreate (bundle);
-				
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 			this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
-			AddTab ("Tab 1", Resource.Drawable.Icon, new SampleTabFragment ());
-			AddTab ("Tab 2", Resource.Drawable.Icon, new SampleTabFragment2 ());
 			if (bundle != null)
 				this.ActionBar.SelectTab(this.ActionBar.GetTabAt(bundle.GetInt("tab")));
-			addGroupButton = FindViewById<Button> (Resource.Id.add_tab_Button);
-			addGroupButton.LongClick += delegate {
-				AddTab ("Tab 3", Resource.Drawable.Icon, new SampleTabFragment ());
-				Java.IO.File sdCard = Android.OS.Environment.ExternalStorageDirectory;
-				Java.IO.File directory = new Java.IO.File (sdCard.AbsolutePath + "/downloads");
+			AddTab ("All people", Resource.Drawable.Icon, new AllPeopleFragement ());
 
-				if (!directory.Exists ()) {
-					directory.Mkdirs ();
-				} 
-
-				Java.IO.File file = new Java.IO.File (directory, "text.txt");
-					FileWriter writer = new FileWriter (file,true); 
-					// Writes the content to the file
-					writer.Append ("Press\n Add\n Button\n in\n Main\n"); 
-					writer.Flush ();
-					writer.Close (); 
-			};
+			//file function may be used later
+//			file.Delete();
+//			Fake_data ();
+//			Read_file ();
 		}
 
 		protected override void OnSaveInstanceState(Bundle outState)
@@ -74,6 +68,56 @@ namespace Tab
 			};
 
 			this.ActionBar.AddTab (tab);
+		}
+		void Read_group(String s){		
+			String[] tabs = s.Split ('|'); 
+			for (int i = 0; i < tabs.Length; i++) {
+				AddTab (tabs[i], Resource.Drawable.Icon, new AllPeopleFragement ());
+			}
+		}
+		void Fake_data(){
+			FileWriter writer = new FileWriter (file); 
+			// Writes the content to the file
+			writer.Append ("Group:Group 1|Group 2|Group3|"); 
+			writer.Flush ();
+			writer.Close ();
+		}
+		void Read_file(){
+
+			FileReader fr = new FileReader(file); 
+			BufferedReader br = new BufferedReader(fr); 
+			String line; 
+			String data="";
+			while((line = br.ReadLine()) != null) { 
+				data += line;
+			} 
+			fr.Close ();
+			String[] tabs = data.Split (':');
+			for (int i = 0; i < tabs.Length; i += 2) {
+				switch (tabs [i]) {
+				case "Group":
+					Read_group(tabs [i + 1]);
+						break;
+				}
+			}
+		}
+		public override bool OnCreateOptionsMenu(IMenu menu)
+		{
+			menu.Add(0,0,0,"Item 0");
+			menu.Add(0,1,1,"Item 1");
+			return true;
+		}
+		public override bool OnOptionsItemSelected(IMenuItem item)
+		{
+			switch (item.ItemId)
+			{
+			case 0: //Do stuff for button 0
+				return true;
+			case 1: //Do stuff for button 1
+				return true;
+			default:
+				return base.OnOptionsItemSelected(item);
+			}
 		}
 	}
 }

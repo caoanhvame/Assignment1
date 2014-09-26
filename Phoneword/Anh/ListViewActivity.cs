@@ -16,10 +16,12 @@ namespace Anh
 	[Activity (Label = "ListViewActivity")]			
 	public class ListViewActivity : Activity
 	{
+		Button back;
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
 			SetContentView (Resource.Layout.ListView);
+			back = FindViewById<Button> (Resource.Id.back_Button);
 			String[] web = {
 				"Google Plus",
 				"Twitter",
@@ -48,6 +50,9 @@ namespace Anh
 			//					Toast.makeText(MainActivity.this, "You Clicked at " +web[+ position], Toast.LENGTH_SHORT).show();
 			//				}
 			//			});
+			back.Click += delegate {
+				base.Finish();
+			};
 		}
 	}
 }
