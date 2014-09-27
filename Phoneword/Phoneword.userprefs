@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.A" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Tab\PersonProfileActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tab\MainActivity.cs">
     <Files>
-      <File FileName="Tab\MainActivity.cs" Line="4" Column="4" />
-      <File FileName="Tab\AllPeopleFragement.cs" Line="35" Column="35" />
-      <File FileName="Tab\ListAdapter.cs" Line="73" Column="73" />
-      <File FileName="Tab\SampleTabFragement2.cs" Line="5" Column="5" />
-      <File FileName="Tab\PersonProfileActivity.cs" Line="4" Column="4" />
+      <File FileName="Tab\MainActivity.cs" Line="37" Column="37" />
+      <File FileName="Tab\AllPeopleFragement.cs" Line="5" Column="5" />
+      <File FileName="Tab\PersonProfileActivity.cs" Line="7" Column="7" />
+      <File FileName="Tab\Contact.cs" Line="4" Column="4" />
+      <File FileName="Tab\ListAdapter.cs" Line="37" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

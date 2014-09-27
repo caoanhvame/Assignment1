@@ -18,6 +18,10 @@ namespace Tab
 	{
 		private ImageView ava;
 		private TextView extra;
+		private Button favorite;
+
+		private List<string> web = new List<string> ();
+		List<int> imageId = new List<int> ();
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -25,8 +29,19 @@ namespace Tab
 			SetContentView (Resource.Layout.PersonProfile);
 			ava = FindViewById<ImageView> (Resource.Id.userProfileAva);
 			extra = FindViewById<TextView> (Resource.Id.userProfileExtra);
+			favorite = FindViewById<Button> (Resource.Id.userProfileFavorite);
 			extra.Text = "Like ...";
+			Intent i = Intent;
+			ava.SetImageResource(i.GetIntExtra ("imageId",0));
+			extra.Text=i.GetStringExtra ("web");
+			favorite.Click += delegate(object sender, EventArgs e) {
+				Intent intent=new Intent();  
+				intent.PutExtra("web",extra.Text);  
+				intent.PutExtra("imageId", i.GetIntExtra("imageId",0));
+				SetResult(Result.Ok,intent);  
 
+				Finish();//finishing activity  
+			};
 		}
 	}
 }

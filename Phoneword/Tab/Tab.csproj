@@ -47,12 +47,13 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleTabFragement2.cs" />
     <Compile Include="ImageAdapter.cs" />
     <Compile Include="HandleXml.cs" />
     <Compile Include="ListAdapter.cs" />
     <Compile Include="AllPeopleFragement.cs" />
     <Compile Include="PersonProfileActivity.cs" />
+    <Compile Include="FavoriteFragement.cs" />
+    <Compile Include="Contact.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -75,9 +76,9 @@
     <AndroidResource Include="Resources\values\ids.xml" />
     <AndroidResource Include="Resources\layout\Tab2.axml" />
     <AndroidResource Include="Resources\layout\list_row.axml" />
-    <AndroidResource Include="Resources\layout\ListView.axml" />
     <AndroidResource Include="Resources\layout\PersonProfile.axml" />
-    <AndroidResource Include="Resources\drawable\favorite.jpg" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\drawable\favorite.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
 </Project>

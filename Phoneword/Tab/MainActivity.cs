@@ -9,8 +9,13 @@ using Android.OS;
 using Android.Net;
 using Java.IO;
 using Java.Util;
+using Android.Preferences;
+using Android.Util;
+
+
 namespace Tab
 {	[Activity (Label = "Tab", MainLauncher = true, Icon = "@drawable/icon")]
+
 	public class MainActivity : Activity
 	{   	
 		Java.IO.File sdCard ;
@@ -24,15 +29,26 @@ namespace Tab
 				directory.Mkdirs ();
 			} 
 			file = new Java.IO.File (directory, "text.txt");
-		
+
+
 			base.OnCreate (bundle);
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
 			this.ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 			if (bundle != null)
 				this.ActionBar.SelectTab(this.ActionBar.GetTabAt(bundle.GetInt("tab")));
-			AddTab ("All people", Resource.Drawable.Icon, new AllPeopleFragement ());
 
+			ISharedPreferences prefs = ApplicationContext.GetSharedPreferences ("shared", FileCreationMode.WorldReadable); 
+			ISharedPreferencesEditor editor = prefs.Edit();
+			editor.PutString("number_of_times_accessed", "123");
+			editor.Apply();
+ 
+			Contact contact = new Contact ();
+			Fragment allPeople = new AllPeopleFragement (contact);
+			AddTab ("All people", Resource.Drawable.Icon, allPeople);
+			Fragment favorite = new FavoriteFragement (contact);
+			AddTab ("Favorite", Resource.Drawable.Icon,favorite );
+//			Overr
 			//file function may be used later
 //			file.Delete();
 //			Fake_data ();
@@ -46,6 +62,7 @@ namespace Tab
 			base.OnSaveInstanceState(outState);
 		}
 
+
 		void AddTab (string tabText, int iconResourceId, Fragment view)
 		{
 			var tab = this.ActionBar.NewTab ();            
@@ -58,9 +75,7 @@ namespace Tab
 				var  fragment = this.FragmentManager.FindFragmentById(Resource.Id.fragmentContainer);
 				if (fragment != null)
 					e.FragmentTransaction.Remove(fragment);    
-				Bundle bundle = new Bundle();
-				bundle.PutInt("detail",3);
-				view.Arguments=bundle;
+
 				e.FragmentTransaction.Add (Resource.Id.fragmentContainer, view);
 			};
 			tab.TabUnselected += delegate(object sender, ActionBar.TabEventArgs e) {
@@ -70,9 +85,10 @@ namespace Tab
 			this.ActionBar.AddTab (tab);
 		}
 		void Read_group(String s){		
+			Contact c = new Contact ();
 			String[] tabs = s.Split ('|'); 
 			for (int i = 0; i < tabs.Length; i++) {
-				AddTab (tabs[i], Resource.Drawable.Icon, new AllPeopleFragement ());
+				AddTab (tabs[i], Resource.Drawable.Icon, new AllPeopleFragement (c));
 			}
 		}
 		void Fake_data(){

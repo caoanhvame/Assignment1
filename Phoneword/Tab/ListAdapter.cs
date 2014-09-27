@@ -63,9 +63,30 @@ namespace Tab
 			} else {
 				txtTitle.Text = web [position];
 			}
-
 			imageView.SetImageResource(imageId[position]);
-
+			imageView.Tag =imageId [position];
+//			txtTitle.Touch += delegate(object sender, View.TouchEventArgs touchEventArgs) {
+//								string message;
+//								switch (touchEventArgs.Event.Action )
+//								{
+//								case MotionEventActions.Down:
+//								case MotionEventActions.Move:
+//									message = "Touch Begins";
+//									System.Console.WriteLine("X  "+touchEventArgs.Event.GetX());
+//									break;
+//								case MotionEventActions.Up:
+//									message = "Touch Ends";
+//									System.Console.WriteLine("After:  "+touchEventArgs.Event.GetX());
+//									break;
+//				
+//								default:
+//									message = string.Empty;
+//									break;
+//								}
+//				
+//								System.Console.WriteLine(message);
+//			
+//							};
 			return rowView;
 		}
 	}
